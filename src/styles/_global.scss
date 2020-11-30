@@ -1,0 +1,45 @@
+body {
+    max-width: 1900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 22%; bottom: -70%; left: 0; right: 0;
+        background-image: url(../images/bg-pattern-intro-left-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: bottom left; 
+    }
+
+    @media screen and (max-width: 885px) {
+        &::after {
+            display: none;
+        }
+    }
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.links {
+    font-size: 15px;
+    font-weight: 400;
+}
+

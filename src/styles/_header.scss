@@ -1,0 +1,114 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(256, 26%, 20%);
+    z-index: -1;
+    color: hsl(0, 0%, 98%);
+    padding: 0 8vw;
+
+    &__textbox {
+        height: min-content;
+        flex: 0 0 45%;
+        margin: 100px 0 75px;
+
+        .header__line {
+            width: 25%;
+            color: #f5f5f5;
+        }
+
+        &__heading {
+            font-size: calc(2em + 1.8vw);
+            margin-top: 30px;
+        }
+
+        &__subheading {
+            margin: 25px 0;
+            line-height: 2;
+        }
+    }
+
+    &__hero__image {
+        width: 100%;
+        transform: translateY(100px);
+        object-fit: cover;
+        object-position: 92% 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -40px; bottom: 0; right: -40px; left: 0;
+        background-image: url(../images/bg-pattern-intro-right-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        z-index: 1;
+    }
+
+    @media screen and (max-width: 885px) {
+        &__textbox {
+            position: relative;
+            flex: 0 0 60%;
+            margin-top: 55px;
+
+            & > * {
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        &__line { display: none }
+
+        &::after {
+            background-image: url(../images//bg-pattern-intro-left-mobile.svg);
+            background-position: top left;
+            top: 80px; right: 0;
+            z-index: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse;
+        text-align: center;
+        overflow-y: hidden;
+        padding: 0;
+
+        &__hero__image {
+            box-shadow: none;
+            width: 100%;
+            transform: translateY(0) translateX(0);
+        }
+
+        &__textbox {
+            padding: 0 6vw;
+            margin: 75px 0 100px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url(../images/bg-pattern-intro-left-mobile.svg);
+                top: -75px; bottom: 0; left: 0; right: 0;
+                background-repeat: no-repeat;
+                background-position: top left;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-image: url(../images/bg-pattern-intro-right-mobile.svg);
+                top: 0; bottom: -245px; left: 0; right: 0;
+                background-repeat: no-repeat;
+                background-position: bottom right;
+            }
+
+            &__heading {
+                margin-top: 0;
+                font-size: calc(2.3em + 1.25vw);;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+    
+}

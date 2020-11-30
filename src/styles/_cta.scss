@@ -1,0 +1,46 @@
+.cta {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 150px 8vw;
+    padding: 60px 40px;
+    background-color: hsl(256, 26%, 20%);
+    color:  hsl(0, 0%, 98%);
+
+    &__heading {
+        position: relative;
+        max-width: 60%;
+        font-size: calc(2.3em + 1vw);
+        line-height: 1;
+        z-index: 5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+
+    button {
+        width: 140px;
+    }
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        &__heading {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        &::after {
+            background-position: top right;
+            background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+        }
+    }
+}
